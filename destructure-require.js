@@ -1,4 +1,28 @@
-// Press ctrl+space for code completion
+/*
+BEFORE
+const logger = require('../../').logger;
+
+AFTER
+const { logger } = require('../../');
+
+
+NOTES:
+const logger = require('../../').logger;
+- this is a VariableDeclaration
+- of kind 'const'
+
+logger = require('../../').logger;
+- this is a VariableDeclarator
+
+logger
+- this is the 'id' (of type 'Identifier')
+
+require('../../').logger
+- this is the 'init' (of type 'MemberExpression')
+
+
+*/
+
 function transformer(file, api) {
   const j = api.jscodeshift;
 
